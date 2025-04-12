@@ -22,5 +22,19 @@ COPY build/libs/*SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 ```
 
+### docker cli
+```bash
+# Spring Boot 프로젝트 도커 이미지로 구축하기
+docker build -t [이미지 이름] .
+
+# 현재 가지고 있는 도커 이미지 리스트 조회
+docker image ls
+
+# 내가 만든 Spring Boot 도커 이미지를 도커 컨테이너로 실행시키기
+# -d: 컨테이너를 백그라운드에서 실행하기
+# -p: 호스트와 컨테이너의 포트 설정(BE 프로젝트니까 8080으로)
+docker run -d -p 8080:8080 [이미지 이름]
+```
+
 ### 강의 주소
 [비전공자도 이해할 수 있는 Docker 입문/실전](https://inf.run/GvHgg)
